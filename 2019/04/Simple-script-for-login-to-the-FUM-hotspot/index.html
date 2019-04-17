@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>Teaching - S.Mohammad Hosseinirad</title>
+    <title>Simple script for login to the FUM hotspot. - S.Mohammad Hosseinirad</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,16 +10,12 @@
 
 
 
-<link rel="canonical" href="/pages/teaching.html">
+<link rel="canonical" href="/2019/04/Simple-script-for-login-to-the-FUM-hotspot/">
 
         <meta name="author" content="Mohammad" />
-        <meta name="description" content="Teaching materials" />
+        <meta name="keywords" content="Gnu/Linux,Bash,FUM" />
+        <meta name="description" content="Script for login to the FUM hotspot" />
 
-    <meta property="og:site_name" content="S.Mohammad Hosseinirad" />
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Teaching"/>
-    <meta property="og:url" content="/pages/teaching.html"/>
-    <meta property="og:description" content="Teaching materials" />
 
 
     <!-- Bootstrap -->
@@ -52,7 +48,7 @@ S.Mohammad Hosseinirad            </a>
                     <li><a href="/pages/codes.html">Codes</a></li>
                     <li><a href="/pages/publications.html">Publications</a></li>
                     <li><a href="/pages/teaching.html">Teaching</a></li>
-                        <li >
+                        <li class="active">
                             <a href="/category/blog.html">Blog</a>
                         </li>
             </ul>
@@ -68,15 +64,61 @@ S.Mohammad Hosseinirad            </a>
     <div class="row">
         <div class="col-sm-9">
 
-    <section id="content" class="body">
-        <h1 class="entry-title">Teaching</h1>
-        
-        <div class="entry-content">
-            <p>Analytical Mechanics (Fall 2015)</p>
-<p><a href="python-Fall-2016.html">Python (Fall 2016)</a></p>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2019/04/Simple-script-for-login-to-the-FUM-hotspot/"
+                       rel="bookmark"
+                       title="Permalink to Simple script for login to the FUM hotspot.">
+                        Simple script for login to the FUM hotspot.
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2019-04-17T17:43:00+04:30"> Wed 17 April 2019</time>
+    </span>
 
-        </div>
+        <span class="label label-default">Category</span>
+        <a href="/category/blog.html">blog</a>
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tags/gnulinux.html">Gnu/Linux</a>
+        /
+	<a href="/tags/bash.html">Bash</a>
+        /
+	<a href="/tags/fum.html">FUM</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>If you want to simply login to the <a href="http://um.ac.ir/">FUM</a> hotspot, do the followings:</p>
+<p>At first you must compute the MD5 hash of your password:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> -n <span class="st">&quot;Password&quot;</span> <span class="kw">|</span> <span class="ex">md5sum</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $1}&#39;</span></code></pre></div>
+<p>Please replace the Password with yours.</p>
+<p>Then create a simple bash script:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+<span class="kw">while</span> <span class="fu">true</span><span class="kw">;</span> <span class="kw">do</span>
+    <span class="ex">curl</span> --data <span class="st">&quot;username=Username&amp;password=HashedPass&quot;</span> https://hotspot.um.ac.ir/login <span class="op">&gt;</span> /dev/null
+    <span class="fu">sleep</span> 100
+<span class="kw">done</span></code></pre></div>
+<p>You should replase the Username with your FUM one and the HashedPass with the output of the above command.</p>
+<p>You can make this script executable and put it in your binary PATHs (for example ~/bin) for easier life.</p>
+<p>To logout simply create another script like below:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
+<span class="ex">curl</span> --data <span class="st">&quot;username=Username&amp;password=HashedPass&quot;</span> https://hotspot.um.ac.ir/logout <span class="op">&gt;</span> /dev/null
+<span class="kw">done</span></code></pre></div>
+
+            </div>
+            <!-- /.entry-content -->
+        </article>
     </section>
+
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
