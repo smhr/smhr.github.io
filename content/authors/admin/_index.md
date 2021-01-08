@@ -1,10 +1,6 @@
 ---
 # Display name
-name: Mohammad Hosseinirad
-
-# Username (this should match the folder name)
-authors:
-- admin
+title: Mohammad Hosseinirad
 
 # Is this the primary user of the site?
 superuser: true
@@ -15,7 +11,7 @@ role: Postdoctoral Researcher
 # Organizations/Affiliations
 organizations:
 - name: IPM
-  url: "/"
+  url: "http://www.ipm.ac.ir/"
 
 # Short bio (displayed in user profile at end of posts)
 bio: I’m Mohammad Hosseinirad. A postdoc researcher at the school of astronomy, IPM.
