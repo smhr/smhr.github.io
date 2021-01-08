@@ -70,4 +70,4 @@ user_groups:
 - Visitors
 ---
 
-I am a postdoc at the school of astronomy of IPM. My current research includes gravitational instability of filaments using non-ideal magnetohydrodynamics framework, simulation of fragmentation of filaments and evolution of star clusters, especially globular clusters. I'm also interested in high performance computing especially its application in astrophysics.
+I am a postdoc at the school of astronomy at IPM. My current research includes gravitational instability of filaments using non-ideal magnetohydrodynamics framework, simulation of fragmentation of filaments and evolution of star clusters, especially globular clusters. I'm also interested in high performance computing especially its application in astrophysics.
